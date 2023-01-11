@@ -38,24 +38,55 @@ public class tresEnRaya {
 		}
 	}
 	
-	public static boolean finpartida(String array[][]) {
-		boolean check1 = true,check2 = true;
+	public static String finpartida(String array[][]) {
+		boolean check1 = true,check2 = false;
+		String resultado ="";
+		//parte horizontal
 		for (int i = 0; i < array.length; i++) {
-			if ((array[i][0] == "x" && array[i][1] == "x" && array[i][2] == "x") || (array[i][0] == "o" && array[i][1] == "o" && array[i][2] == "o")) {
+			if (array[i][0].equals("x") && array[i][1].equals("x") && array[i][2].equals("x")) {
 				check1 = false;
+				resultado = "Ganador: x";
+			}
+			if (array[i][0].equals("o") && array[i][1].equals("o") && array[i][2].equals("o")) {
+				check1 = false;
+				resultado = "Ganador: o";
+			}
+			
+		}
+		//parte vertical
+		for (int i = 0; i < array.length; i++) {
+			if (array[0][i].equals("x") && array[1][i].equals("x") && array[2][i].equals("x")) {
+				check1 = false;
+				resultado = "Ganador: x";
+			}
+			if (array[0][i].equals("o") && array[1][i].equals("o") && array[2][i].equals("o")) {
+				check1 = false;
+				resultado = "Ganador: o";
 			}
 		}
-		for (int i = 0; i < array.length; i++) {
-			if ((array[0][i] == "x" && array[1][i] == "x" && array[2][i] == "x") || (array[0][i] == "o" && array[1][i] == "o" && array[2][i] == "o")) {
-				check1 = false;
-			}
-		}
-		if ((array[0][0] == "x" && array[1][1] == "x" && array[2][2] == "x") || (array[0][0] == "o" && array[1][1] == "o" && array[2][2] == "o")) {
+		
+		//parte diagonal
+		
+		if (array[0][0].equals("x") && array[1][1].equals("x") && array[2][2].equals("x")) {
 			check1 = false;
+			resultado = "Ganador: x";
 		}
-		if ((array[2][0] == "x" && array[1][1] == "x" && array[0][2] == "x") || (array[2][0] == "o" && array[1][1] == "o" && array[0][2] == "o")) {
+		if (array[0][0].equals("o") && array[1][1].equals("o") && array[2][2].equals("o")) {
 			check1 = false;
+			resultado = "Ganador: o";
 		}
+		
+		//parte diagonal inversa
+		
+		if (array[2][0].equals("x") && array[1][1].equals("x") && array[0][2].equals("x")) {
+			check1 = false;
+			resultado = "Ganador: x";
+		}
+		if (array[2][0].equals("o") && array[1][1].equals("o") && array[0][2].equals("o")) {
+			check1 = false;
+			resultado = "Ganador: o";
+		}
+
 		
 		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < array.length; j++) {
@@ -66,11 +97,12 @@ public class tresEnRaya {
 		}
 		
 		if (check1 == true && check2 == true) {
-			return false;
-		}else {
-			return true;
+			return resultado = "" ;
+		}else if(check1 == true && check2 == false){
+			return resultado = "Empate";
+		}else{
+			return resultado;
 		}
-		
 	}
 	
 	public static void juega(String array[][],int pos1 , int pos2, char turno) {
@@ -99,11 +131,15 @@ public class tresEnRaya {
 			}
 			}while(check(tablero,pos1,pos2) != true);
 			juega(tablero,pos1,pos2,turno);
-			System.out.println("cambio de turno!!!");
-			turno = turno(turno);
-		}while(finpartida(tablero) == false);
-		System.out.println("fin de la partida!!!");
+			if (finpartida(tablero).equals("")) {
+				System.out.println("cambio de turno!!!");
+				turno = turno(turno);
+			}
+		}while(finpartida(tablero).equals(""));
+		System.out.println();
+		System.out.println("################################## fin de la partida ##################################");
 		mostrartablero(tablero);
+		System.out.println(finpartida(tablero));
 	}
 
 }
