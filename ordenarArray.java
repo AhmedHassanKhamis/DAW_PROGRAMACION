@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Scanner;
 
+//Ordenar un vector de dimensión n. Pedir por el teclado la dimensión y los valores del vector.
+
+
 public class ordenarArray {
 
 	public static void ordenar(int [] array) {
