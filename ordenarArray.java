@@ -7,21 +7,16 @@ import java.util.Scanner;
 public class ordenarArray {
 
 	public static void ordenar(int [] array) {
-		int menor = array[0];
+		int aux = array[0];
 		for (int i = 0; i < array.length; i++) {
-			for (int j = 0; j < array.length; j++) {
-				if (array[j] < menor) {
-					menor = array[j];
+			for (int j = i; j < array.length; j++) {
+				if (array[j] < array[i]) {
+					aux = array[i];
+					array[i] = array[j];
+					array[j] = aux;
 				}
 			}
-			if (array[i] < menor) {
-				menor = array[i];
-			}else {
-				array[i]=menor;
-			}
 		}
-		
-		
 	}
 	
 	
