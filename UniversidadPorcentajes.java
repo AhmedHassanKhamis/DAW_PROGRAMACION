@@ -20,22 +20,33 @@ import java.util.Scanner;
 public class UniversidadPorcentajes {
 
 	public static void Porcentajes(int cedula[],int sexo[],int trabaja[],int sueldo[]) {
-		int alumnos = sexo.length,contadorH=0,contadorM=0;
+		int alumnos = sexo.length,contadorH=0,contadorM=0,contadorHT = 0,sumaH = 0,contadorMT = 0,sumaM = 0;
 		for (int i = 0; i < sexo.length; i++) {
 			if (sexo[i] == 1) {
 				contadorH++;
-				if () {
-					
+				if (trabaja[i] == 1) {
+					contadorHT ++;
+					sumaH += sueldo[i];
 				}
 			}else if (sexo[i] == 2) {
 				contadorM++;
+				if (trabaja[i] == 1) {
+					contadorMT ++;
+					sumaM += sueldo[i];
+				}
+				
 			}
 		}
 		double porH = (contadorH*100)/(contadorH+contadorM);
 		double porM = (contadorM*100)/(contadorH+contadorM);
+		double porHT = (contadorHT*100)/contadorH;
+		double sueldoH = sumaH / contadorHT;
+		double porMT = (contadorMT*100)/contadorM;
+		double sueldoM = sumaM / contadorMT;
 		System.out.println("Porcentaje de hombres: "+porH+"%");
 		System.out.println("Porcentaje de mujeres: "+porM+"%");
-
+		System.out.println("Porcentaje de hombres que trabaja: "+porHT+"% con sueldo medio de: "+sueldoH);
+		System.out.println("Porcentaje de mujeres que trabaja: "+porMT+"% con sueldo medio de: "+sueldoM);
 		
 		
 		
