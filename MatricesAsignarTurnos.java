@@ -1,7 +1,11 @@
 /*
-El Departamento de Sistemas de la UCPR cuenta con cinco salas de sistemas, cada una de ellas con 20 ordenadores. Se requiere sistematizar el proceso de reserva o cancelación de turnos para dichas salas en el horario disponible (12 a 2 pm, únicamente), los demás horarios están reservados para clases.
+El Departamento de Sistemas de la UCPR cuenta con cinco salas de sistemas, cada una de ellas con 20 ordenadores.
+Se requiere sistematizar el proceso de reserva o cancelación de turnos para dichas salas en el horario disponible (12 a 2 pm, únicamente),
+los demás horarios están reservados para clases.
 
-Construir un programa que solicite al usuario la siguiente información (sala, equipo), tanto para asignar turno como para cancelarlo. Igualmente, el programa deberá permitir conocer el número de equipos disponibles (sin asignar) por sala, y el número total de turnos asignado (todas las salas).
+Construir un programa que solicite al usuario la siguiente información (sala, equipo),tanto para asignar turno como para cancelarlo.
+Igualmente, el programa deberá permitir conocer el número de equipos disponibles (sin asignar) por sala,
+y el número total de turnos asignado (todas las salas).
 
 Tener en cuenta que el programa deberá funcionar permanentemente mostrando un menú de opciones así:
 
