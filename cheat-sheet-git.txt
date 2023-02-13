@@ -1,0 +1,22 @@
+###############PASOS PARA INICIALIZAR GIT########################
+creas la carpeta
+git init
+git remoteadd origin [ENLACE]
+git pull origin master
+luego abres tu editor de confianza y le asignas el proyecto descargado.
+
+
+
+
+
+################PASOS PARA SUBIR CODIGO A GIT/GITHUB###################
+1-creas codigo
+2-haces pull primero
+3.1-haces un add
+3.2-haces un commit en un branch de issue
+4-haces un merge de master en la issue
+5-haces un push en tu rama issue
+6-te cambias a master
+7-haces un pull de master
+8-haces un merge de tu issue en la master
+9-haces un push en la master
