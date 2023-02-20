@@ -21,11 +21,14 @@ public class Main {
 	
 	
 	public static void main(String[] args) {		
-		CuentaCorriente cuentas [] = new CuentaCorriente[100];
-		
+		password primera = new password(1000);
+		System.out.println(primera.getClave());		
 		
 		
 		
 	}
 
+	
+	
+	
 }
