@@ -12,9 +12,9 @@ public class Sala {
 	public Sala(Pelicula pelicula, int precio) {
 		this.pelicula = pelicula;
 		this.precio = precio;
-		asientos = new Asientos[72];
+		asientos = new Asientos[64];
 		int i = 0;
-		for (int fila = 0; fila < 8; fila++) {
+		for (int fila = 1; fila <= 8; fila++) {
 			for (char columna = 'A'; columna < 'I'; columna++) {
 				Asientos asiento = new Asientos(fila,columna);
 				asientos[i++] = asiento;
@@ -40,11 +40,14 @@ public class Sala {
 	
 	public String mostrarAsientos() {
 		String resultado = "";
+		int k = 1;
 		for (int i = 0; i < asientos.length; i++) {
-			resultado += asientos[i] + "\t";
-			if (i % 8 == 0) {
+			resultado +=asientos[i].getColumna()+""+asientos[i].getFila()+":"+ asientos[i].disponible() + " ";
+			if (k == 8) {
 				resultado += "\n";
+				k=0;
 			}
+			k++;
 		}
 		return resultado;
 	}
