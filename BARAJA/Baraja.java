@@ -33,10 +33,34 @@ public class Baraja {
 		cartas[destino] = aux;
 	}
 	
-	public Carta dar() {
+	public Carta siguienteCarta() {
 		return cartas[cima++];
 	}
 	
+	public String cartasDisponibles() {
+		String resultado = "";
+		for (int i = cima; i < cartas.length; i++) {
+			resultado += cartas[i] +",";
+		}
+		return resultado;
+	}
+	
+	public String darCartas(int numero) {
+		String resultado = "";
+		for (int i = 0; i < numero; i++) {
+			resultado += cartas[cima];
+			cima++;
+		}
+		return resultado;
+	}
+	
+	public String cartasMonton() {
+		String resultado ="";
+		for (int i = 0; i < cima; i++) {
+			resultado += cartas[i]+",";
+		}
+		return resultado;
+	}
 	
 	@Override
 	public String toString() {
